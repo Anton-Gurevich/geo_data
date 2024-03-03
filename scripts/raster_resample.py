@@ -40,11 +40,11 @@ def resample_raster(input_raster, output_raster_path, target_pixel_width, target
 
 
 if __name__ == "__main__":
-    output_path = '/vsimem/out.tif'
-    raster_path = r'C:\Users\e038654\PycharmProjects\geo_data\lla_CH_all.tif'
+    output_path = r'\vsimem\out.tif'
+    # raster_path = r'C:\Users\e038654\PycharmProjects\geo_data\data\Ein-Quinia_image.tif'
+    raster_path = r'C:\Users\e038654\PycharmProjects\geo_data\data\Ein-Quinia_image.tif'
     dataset = gdal.Open(raster_path)
     Transform = dataset.GetGeoTransform()
-    print(Transform)
 
     # Specify the band number (e.g., 1 for the first band)
     band_number = 1

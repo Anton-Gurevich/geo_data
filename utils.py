@@ -5,6 +5,8 @@ from typing import Dict, List, SupportsFloat, SupportsInt, Tuple, Optional, Any
 def get_deg2meter_conversion_factor(lat_deg: float) -> Tuple[float, float]:
     """
     get conversion factor between lat/long and meters
+     Return:
+         (lon, lat) conversion factor
     """
     equatorial_radius = 6378137.0
     polar_radius = 6356752.314245

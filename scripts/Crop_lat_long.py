@@ -1,18 +1,18 @@
 from osgeo import gdal, ogr, osr
 
 # Define the input and output file paths
-input_tif = r'C:\Users\e038654\PycharmProjects\geo_data\lla_CH_all.tif'
-output_tif = 'cropp.tif'
+input_tif = r'../data/Ein-Quinia_elevation.tif'
+output_tif = '../data/demo_Ein-Quinia_elevation.tif'
+output_tiff_path_to_mem = rf'/vismem/{output_tif}'  # To prevent saving to file
 
 # Define the bounding box coordinates (in EPSG:4326)
-xmin, ymin, xmax, ymax = 46.94436, 8.27436, 46.97729, 8.33900
+xmin, ymin, xmax, ymax = 3925175, 3976284.0 - 3000, 3925175 + 6000, 3976284 + 3000
 
 # Create a tuple with the correct format for the window parameter
 window = (ymin, xmax, ymax, xmin)
 
-
 # Use gdal.Translate to crop the GeoTIFF
-aa = gdal.Translate(output_tif, input_tif, projWin=window)
+_ = gdal.Translate(output_tif, input_tif, projWin=window)
 
 # Close the input dataset
 input_ds = None
